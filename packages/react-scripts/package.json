@@ -1,10 +1,10 @@
 {
-  "name": "react-scripts",
-  "version": "4.0.3",
-  "description": "Configuration and scripts for Create React App.",
+  "name": "@abcaustralia/react-scripts",
+  "version": "1.0.0",
+  "description": "Custom ABC fork of react-scripts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-react-app.git",
+    "url": "https://github.com/abcdigital/create-react-app.git",
     "directory": "packages/react-scripts"
   },
   "license": "MIT",
@@ -28,7 +28,8 @@
   },
   "types": "./lib/react-app.d.ts",
   "dependencies": {
-    "@babel/core": "7.12.3",
+    "@abcaustralia/postcss-config": "latest",
+    "@babel/core": "7.14.2",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
@@ -65,9 +66,10 @@
     "mini-css-extract-plugin": "0.11.3",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
-    "postcss-flexbugs-fixes": "4.2.1",
-    "postcss-loader": "3.0.0",
-    "postcss-normalize": "8.0.1",
+    "postcss": "^8.3.6",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^4.3.0",
+    "postcss-normalize": "10.0.0",
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "5.0.2",
     "prompts": "2.4.0",
