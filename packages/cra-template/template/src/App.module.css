@@ -1,0 +1,24 @@
+.masthead {
+  background-color: var(--colour-charcoal);
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  color: white;
+  padding: 0 1rem;
+}
+
+.login {
+  color: white;
+  margin-left: auto;
+}
+
+.loginDropdown {
+  background-color: var(--colour-charcoal);
+}
+
+.globalNavButton {
+  background-color: var(--black-20-opacity);
+}

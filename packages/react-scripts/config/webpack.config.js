@@ -38,6 +38,8 @@ const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 // @remove-on-eject-end
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash');
 
+const getContext = require("@abcaustralia/postcss-config/getContext");
+
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
@@ -128,6 +130,7 @@ module.exports = function (webpackEnv) {
         // package.json
         loader: require.resolve('postcss-loader'),
         options: {
+          /************************************* 
           postcssOptions: {
             // Necessary for external CSS imports to work
             // https://github.com/facebook/create-react-app/issues/2677
@@ -149,7 +152,15 @@ module.exports = function (webpackEnv) {
               'postcss-normalize',
             ],
           },
-          sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+          *********************************** 
+           * original PostCSS options disabled 
+           * in favour of custom ABC config
+          ************************************/
+           postcssOptions: {
+            config: require.resolve("@abcaustralia/postcss-config"),
+            ...getContext(process.env.NODE_ENV === "development")
+          },
+          sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment
         },
       },
     ].filter(Boolean);
